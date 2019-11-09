@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp21.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp21"
+        mc:Ignorable="d"
+        Title="Window1" Height="700" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Content="启动动画" Width="100" Height="40" Click="Button_Click" />
+
+        <Grid Grid.Row="1">
+
+            <Grid  Name="grid" >
+                <Grid.Background>
+                    <ImageBrush ImageSource="background.jpg" Stretch="Uniform"/>
+                </Grid.Background>
+            </Grid>
+            
+            
+        </Grid>
+
+
+    </Grid>
+</Window>
