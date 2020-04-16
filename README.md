@@ -7,32 +7,32 @@
 
 # P1
 
-![图例1](C:\Users\zhouh\Desktop\WPF_UI\img\1.png)
+![图例1](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/1.png)
 
 # P2
 
-![图例2](C:\Users\zhouh\Desktop\WPF_UI\img\2.png)
+![图例2](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/2.png)
 
 # P3
 
-![图例3](C:\Users\zhouh\Desktop\WPF_UI\img\3.png)
+![图例3](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/3.png)
 
 # P4
 
-![图例4](C:\Users\zhouh\Desktop\WPF_UI\img\4.png)
+![图例4](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/4.png)
 
 # P5
 
-![图例5](C:\Users\zhouh\Desktop\WPF_UI\img\5.png)
+![图例5](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/5.png)
 
 # P6
 
-![图例6](C:\Users\zhouh\Desktop\WPF_UI\img\6.png)
+![图例6](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/6.png)
 
 # P7
 
-![图例7](C:\Users\zhouh\Desktop\WPF_UI\img\7.png)
+![图例7](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/7.png)
 
 # P8
 
-![图例8](C:\Users\zhouh\Desktop\WPF_UI\img\8.png)
+![图例8](https://github.com/HenJigg/WPF-UI-Design-/blob/master/img/8.png)
