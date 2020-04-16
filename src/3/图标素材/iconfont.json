@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "648779",
+      "name": "人群",
+      "font_class": "renqun",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "738238",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "1265479",
+      "name": "五角星_空",
+      "font_class": "wujiaoxing_kong",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1841665",
+      "name": "电视剧",
+      "font_class": "dianshiju",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "1920286",
+      "name": "点",
+      "font_class": "dian",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "3092315",
+      "name": "图表 上升趋势",
+      "font_class": "tubiaoshangshengqushi",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "4178694",
+      "name": "AK-IM录像",
+      "font_class": "im_luxiang",
+      "unicode": "e51c",
+      "unicode_decimal": 58652
+    },
+    {
+      "icon_id": "5088244",
+      "name": "世界杯",
+      "font_class": "_shijiebei",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    }
+  ]
+}

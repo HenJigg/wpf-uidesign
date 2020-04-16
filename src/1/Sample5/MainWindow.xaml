@@ -1,0 +1,583 @@
+﻿<Window x:Class="Sample5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sample5"
+        mc:Ignorable="d"
+          xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="MainWindow" Height="750" Width="1050">
+
+    <Window.Resources>
+        <Style x:Key="defaultRadioStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="border" CornerRadius="7" Margin="-5"/>
+                            <ContentPresenter x:Name="contentPresenter"  Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#46CBD9" TargetName="border"/>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.9*"/>
+            <RowDefinition/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="#12BDCF"/>
+            <Border Background="#F9F9FC" Grid.Row="1"/>
+            
+            <Grid Grid.RowSpan="2"  Margin="50 0 50 0"
+                  VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel  VerticalAlignment="Top" Orientation="Horizontal" Margin="10 0 0 0">
+                    <Image Source="./microsoft.png" Width="30" Height="30" VerticalAlignment="Top"/>
+                    <TextBlock Text="Microsoft" Margin="10 0 0 0" Foreground="White" FontSize="25"  FontWeight="Bold" />
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0 0 10 0" Orientation="Horizontal">
+                    <TextBlock Text="❤" FontSize="15" Foreground="White" VerticalAlignment="Center"/>
+                    <Image Source="logo.jpg" Width="30" Height="30" Margin="20 0 10 0" VerticalAlignment="Center">
+                        <Image.Clip>
+                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                        </Image.Clip>
+                    </Image>
+                    <TextBlock Text="Surface Laptop" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal"  VerticalAlignment="Center" >
+                    <RadioButton Style="{StaticResource defaultRadioStyle}" Content="Office" IsChecked="True" Margin="15 0 0 0"/>
+                    <RadioButton Style="{StaticResource defaultRadioStyle}" Content="Windows" Margin="30 0 0 0"/>
+                    <RadioButton Style="{StaticResource defaultRadioStyle}" Content="Microsoft 365" Margin="30 0 0 0"/>
+                    <RadioButton Style="{StaticResource defaultRadioStyle}" Content="Surface" Margin="30 0 0 0"/>
+                    <RadioButton Style="{StaticResource defaultRadioStyle}" Content="Xbox" Margin="30 0 0 0"/>
+                </StackPanel>
+
+                <Border Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30"  Margin="0 0 10 0"
+                        Background="#0EA7B7" CornerRadius="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="❤" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="#76CBD2"/>
+
+                        <TextBox Name="inputText" Grid.Column="1" Width="300" >
+                            <TextBox.Resources>
+                                <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                                    <VisualBrush.Visual>
+                                        <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Search for what you like"/>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </TextBox.Resources>
+
+                            <TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="">
+                                            <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                        </Trigger>
+
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+
+                        </TextBox>
+                    </Grid>
+                </Border>
+
+                <UniformGrid Grid.Row="2" Columns="4"  VerticalAlignment="Center">
+                    <Border  CornerRadius="5" Background="White" Margin="10">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15 15  0 0" Orientation="Horizontal">
+                                <Border Width="20" Height="20" Background="#EDFAF0" CornerRadius="5" VerticalAlignment="Center">
+                                    <TextBlock Text="&#xe673;" Foreground="#7ADA95" FontFamily="/fonts/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <TextBlock Text="76.9%" VerticalAlignment="Center" Foreground="#7ADA95" Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <lvc:CartesianChart Margin="10"  Height="100">
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="#FF7261" Fill="#FFE3E0"  PointGeometrySize="0" Values="20,50,3,20,3,70,50"/>
+                                </lvc:CartesianChart.Series>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis MinValue="0" Name="s1x" ShowLabels="False"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis MinValue="0" Name="s1y" ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="15 0 0 15">
+                                <Border Width="50" Height="50" Background="#FFF1F1" CornerRadius="10">
+                                    <TextBlock Text="&#xe712;" Foreground="#FF7261" FontFamily="/fonts/#iconfont"  FontSize="25"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Margin="15 0 0 0">
+                                    <TextBlock Text="TOTAL COUNT" Foreground="#3F4C5D"/>
+                                    <TextBlock Text="784" FontWeight="Bold" Foreground="#3F4C5D" FontSize="28"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+
+                    <Border  CornerRadius="5" Background="White" Margin="10">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15 15  0 0" Orientation="Horizontal">
+                                <Border Width="20" Height="20" Background="#FFEBE8" CornerRadius="5" VerticalAlignment="Center">
+                                    <TextBlock Text="&#xe59a;" Foreground="Red" FontFamily="/fonts/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <TextBlock Text="-12.5%" VerticalAlignment="Center" Foreground="Red" Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <lvc:CartesianChart Margin="10" >
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="#FECC71" Fill="#FFF2DE" PointGeometrySize="0" Values="20,50,40,50,20,90,25,50"/>
+                                </lvc:CartesianChart.Series>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis MinValue="0" Name="s2x" ShowLabels="False"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis MinValue="0" Name="s2y" ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="15 0 0 15">
+                                <Border Width="50" Height="50" Background="#FFF5E9" CornerRadius="10">
+                                    <TextBlock Text="&#xf26c;" Foreground="#FFBC57" FontFamily="/fonts/#iconfont"  FontSize="25"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Margin="15 0 0 0">
+                                    <TextBlock Text="RETAIL PRICE" Foreground="#3F4C5D"/>
+                                    <TextBlock Text="$599" FontWeight="Bold" Foreground="#3F4C5D" FontSize="28"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+
+                    <Border  CornerRadius="5" Background="White" Margin="10">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15 15  0 0" Orientation="Horizontal">
+                                <Border Width="20" Height="20" Background="#EDFAF0" CornerRadius="5" VerticalAlignment="Center">
+                                    <TextBlock Text="&#xe673;" Foreground="#7ADA95" FontFamily="/fonts/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <TextBlock Text="34.1%" VerticalAlignment="Center" Foreground="#7ADA95" Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <lvc:CartesianChart Margin="10" >
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="#7ADA95" Fill="#E0F6E4" PointGeometrySize="0" Values="60,90,30,60,35,65,40"/>
+                                </lvc:CartesianChart.Series>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis MinValue="0" Name="s3x" ShowLabels="False"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis MinValue="0" Name="s3y" ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="15 0 0 15">
+                                <Border Width="50" Height="50" Background="#EDFAF0" CornerRadius="10">
+                                    <TextBlock Text="&#xe65b;" Foreground="#7ADA95" FontFamily="/fonts/#iconfont"  FontSize="25"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Margin="15 0 0 0">
+                                    <TextBlock Text="SUBSCRIBERS" Foreground="#3F4C5D"/>
+                                    <TextBlock Text="79,456" FontWeight="Bold" Foreground="#3F4C5D" FontSize="28"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+
+                    <Border  CornerRadius="5" Background="White" Margin="10">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15 15  0 0" Orientation="Horizontal">
+                                <Border Width="20" Height="20" Background="#EDFAF0" CornerRadius="5" VerticalAlignment="Center">
+                                    <TextBlock Text="&#xe673;" Foreground="#7ADA95" FontFamily="/fonts/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <TextBlock Text="85.5%" VerticalAlignment="Center" Foreground="#7ADA95" Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            <lvc:CartesianChart Margin="10" >
+                                <lvc:CartesianChart.Series>
+                                    <lvc:LineSeries Stroke="#5CD0E1" PointGeometrySize="0" Fill="#DBF3F9" Values="20,5,60,40,15,90,10,50"/>
+                                </lvc:CartesianChart.Series>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis MinValue="0" Name="s4x" ShowLabels="False"></lvc:Axis>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis MinValue="0" Name="s4y" ShowLabels="False"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
+
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="15 0 0 15">
+                                <Border Width="50" Height="50" Background="#E1F6FD" CornerRadius="10">
+                                    <TextBlock Text="&#xe609;" Foreground="#44C6EE" FontFamily="/fonts/#iconfont"  FontSize="25"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Margin="15 0 0 0">
+                                    <TextBlock Text="GROWTH RATE" Foreground="#3F4C5D"/>
+                                    <TextBlock Text="90%" FontWeight="Bold" Foreground="#3F4C5D" FontSize="28"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                </UniformGrid>
+            </Grid>
+           
+          
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#F9F9FC">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="60 0 10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Corporate Services"   Foreground="#3F4C5D" VerticalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text="View More" HorizontalAlignment="Right" Foreground="#5CD0E1" Margin="0 0 5 0" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+                <Border Grid.Row="1" Background="White" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid HorizontalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="Mobile office" FontSize="15" Foreground="#3F4C5D"/>
+                                <TextBlock Text="+120%" FontSize="20" FontWeight="Bold" Foreground="#3F4C5D"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"  Orientation="Horizontal">
+                                    <Border Width="20" Height="20" Background="#EDFAF0" CornerRadius="5" VerticalAlignment="Center">
+                                        <TextBlock Text="&#xe673;" Foreground="#7ADA95" FontFamily="/fonts/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+
+                                    <TextBlock Text="76.9%" VerticalAlignment="Center" Foreground="#7ADA95" Margin="15 0 0 0"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Last quarter"  FontWeight="Bold" Foreground="#3F4C5D"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <lvc:CartesianChart Margin="10" Grid.Column="1">
+                            <lvc:CartesianChart.Series>
+                                <lvc:LineSeries Stroke="#3BC8D7" Fill="#E1F2F6" LineSmoothness="0" PointGeometrySize="0" Values="20,50,40,50,20,90,25,50"/>
+                            </lvc:CartesianChart.Series>
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis MinValue="0" ShowLabels="True"></lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis MinValue="0"  ShowLabels="True"/>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </Grid>
+                    
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="10 0 60 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Company News" VerticalAlignment="Center"  Foreground="#3F4C5D" FontSize="15" FontWeight="Bold"/>
+
+                <Border Grid.Row="1" Background="#12BDCF" CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#F2F2F2" ShadowDepth="10" BlurRadius="10" Opacity="0.4" Direction="270"/>
+                    </Border.Effect>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Hi,Microsoft 365" Margin="10 0 0 0" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" Width="300" TextWrapping="Wrap" Foreground="#B3E9F1"
+                               Text="According to the official introduction, Microsoft 365 consumer subscription will include two editions-personal edition and home edition. Existing Office 365 subscribers migrate free upgrade to Microsoft 365."/>
+
+                    </StackPanel>
+                </Border>
+                <Image Source="microsoft.png" Grid.Row="1" HorizontalAlignment="Right" Margin="30"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#F9F9FC"/>
+        <Grid Grid.Row="2" Background="#F9F9FC" Margin="60 0 60 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Consumer cloud business" VerticalAlignment="Center" Foreground="#3F4C5D" FontSize="15" FontWeight="Bold"/>
+            <TextBlock Text="View More" HorizontalAlignment="Right" Foreground="#5CD0E1" Margin="0 0 5 0" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+            <Border Grid.Row="1" Margin="5" Background="White" CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1" BorderBrush="#B8C0C9" BorderThickness="1 0 1 0" Margin="0 10 0 10"/>
+                    <TextBlock Text="Azure business" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    <lvc:PieChart  Grid.Column="1" Name="pie1" Series="{Binding SeriesCollection1}" 
+                      LegendLocation="Right" InnerRadius="12" Margin="5">
+                        <lvc:PieChart.ChartLegend>
+                            <lvc:DefaultLegend BulletSize="10"></lvc:DefaultLegend>
+                        </lvc:PieChart.ChartLegend>
+                        <lvc:PieChart.DataTooltip>
+                            <lvc:DefaultTooltip BulletSize="10"></lvc:DefaultTooltip>
+                        </lvc:PieChart.DataTooltip>
+                    </lvc:PieChart>
+
+                    <UniformGrid Grid.Column="2" Columns="5" VerticalAlignment="Center" >
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Chrome"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↓" Foreground="Red" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="Red" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </UniformGrid>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" Margin="5" Background="White" CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="3.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1" BorderBrush="#B8C0C9" BorderThickness="1 0 1 0" Margin="0 10 0 10"/>
+                    <TextBlock Text="Azure business" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    <lvc:PieChart  Grid.Column="1"  Name="pie2"  Series="{Binding SeriesCollection}" 
+                      LegendLocation="Right" InnerRadius="12" Margin="5">
+                        <lvc:PieChart.ChartLegend>
+                            <lvc:DefaultLegend BulletSize="10"></lvc:DefaultLegend>
+                        </lvc:PieChart.ChartLegend>
+                        <lvc:PieChart.DataTooltip>
+                            <lvc:DefaultTooltip BulletSize="10"></lvc:DefaultTooltip>
+                        </lvc:PieChart.DataTooltip>
+                    </lvc:PieChart>
+
+                    <UniformGrid Grid.Column="2" Columns="5" VerticalAlignment="Center" >
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Chrome"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↓" Foreground="Red" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="Red" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock Text="Mozilla"/>
+                                <TextBlock Text="8,945"/>
+                            </StackPanel>
+                            <StackPanel Margin="5 0 0 0">
+                                <TextBlock Text="↑" Foreground="#7ADA95" FontWeight="Bold"/>
+                                <TextBlock Text="52%" Foreground="#7ADA95" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
