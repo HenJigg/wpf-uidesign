@@ -1,0 +1,17 @@
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\bin\Debug\UiDeignApp2.exe.config
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\bin\Debug\UiDeignApp2.exe
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\bin\Debug\UiDeignApp2.pdb
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\Sample3.csprojAssemblyReference.cache
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\MainWindow.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\App.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2_Content.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2_MarkupCompile.cache
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2_MarkupCompile.lref
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\MainWindow.baml
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2.g.resources
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2.Properties.Resources.resources
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\Sample3.csproj.GenerateResource.cache
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\Sample3.csproj.CoreCompileInputs.cache
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2.exe
+C:\Users\zhouh\Desktop\WPFUI\src\3\Sample3\obj\Debug\UiDeignApp2.pdb

@@ -1,0 +1,16 @@
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\bin\Debug\UiDesign.exe.config
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\bin\Debug\UiDesign.exe
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\bin\Debug\UiDesign.pdb
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\Sample4.csprojAssemblyReference.cache
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\MainWindow.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\App.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign_MarkupCompile.cache
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign_MarkupCompile.lref
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\MainWindow.baml
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign.g.resources
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign.Properties.Resources.resources
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\Sample4.csproj.GenerateResource.cache
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\Sample4.csproj.CoreCompileInputs.cache
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign.exe
+C:\Users\zhouh\Desktop\WPFUI\src\Sample4\obj\Debug\UiDesign.pdb
